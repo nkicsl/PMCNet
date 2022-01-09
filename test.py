@@ -36,7 +36,7 @@ images,labels=get_full_test_data(image_dir,label_dir,h,w)
 new_labels = make_label(labels)   
 
 
-print('./'+model_name+'\n')
+print('./weights/'+model_name+'\n')
 model=load_model('./'+model_name,compile=False)
 probs = model.predict(images, batch_size=1, verbose=1)
 save_results(images,probs,labels,save_dir,h,w)
