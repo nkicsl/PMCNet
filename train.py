@@ -50,7 +50,7 @@ train_num = len(os.listdir(train_path+'/images/'))
 valid_num  = len(os.listdir(valid_path+'/images/'))
 
 lr_decay = keras.callbacks.LearningRateScheduler(step_decay,verbose=1)
-checkpointer=ModelCheckpoint(filepath='./new/PMCNet_DDR{epoch:02d}.h5',verbose=1,monitor='val_acc')
+checkpointer=ModelCheckpoint(filepath='./weights/PMCNet_DDR{epoch:02d}.h5',verbose=1,monitor='val_acc')
 loss_fun= multi_class
 model = PMCNet (image_h, image_w, color_type=3, num_class=5) 
 model.compile(optimizer = Adam(lr = 0.0001), loss = loss_fun, metrics = ['acc'])  
